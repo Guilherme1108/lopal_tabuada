@@ -119,6 +119,19 @@ public class TelaTabuada {
 				
 			}
 		});
+		
+		// para esse botão de limpar funcionar é só colocar para inserir um texto vazio quando for apertado
+		buttonLimpar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				textMultiplicando.setText(null); // pode usar o null ou o "" para representar o vazio/nada
+				textMinMultiplicador.setText("");
+				textMaxMultiplicador.setText("");
+			    listTabuada.setListData(new String[0]); //é possivel apagar os resultados da tabuada passando um vetor vazio
+				textMultiplicando.requestFocus();
+			}
+		});
 
 		// tornar a tela visivel "DEVE!" ser a última instrução
 		tela.setVisible(true);
